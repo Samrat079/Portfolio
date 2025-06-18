@@ -1,0 +1,44 @@
+📋 Documentation Guide
+Sections & Customization Points:
+1. Who Am I (Lines 15-17):
+
+Replace the ASCII name art at line 16 with your custom ASCII from assets/ascii/
+Update the introduction text at line 17 with your personal details
+
+2. Arsenal Section (Lines 18-22):
+
+Each tool has its own arsenal-item div
+Add/remove items by copying the structure from lines 19-21
+Replace ASCII logos with your custom ones from assets/ascii/
+The flexbox layout automatically adapts to new items
+
+3. Projects Section (Lines 23-27):
+
+Each project has its own project-item div
+Replace placeholder images with your actual project images
+Add/remove projects by copying the structure from lines 24-26
+Update project titles, descriptions, and tech tags
+
+4. Contact Section (Lines 28-29):
+
+Update contact links at line 29 with your actual information
+Add/remove contact methods as needed
+
+Key Features:
+
+✅ Full Tokyo Night color scheme
+✅ Neofetch-style arsenal layout with ASCII art
+✅ Responsive design for mobile devices
+✅ Terminal window aesthetic with controls
+✅ Monospace font (JetBrains Mono fallback)
+✅ Hover animations and smooth transitions
+✅ Flexbox layouts for easy customization
+
+Easy Customization:
+
+Colors: All theme colors are defined in CSS variables (lines 2-13)
+ASCII Art: Replace the placeholder ASCII at line 16 and in arsenal items
+Images: Replace <i class="fas fa-..."> with <img src="your-image.jpg">
+Content: All text content is clearly marked for easy editing
+
+The portfolio has a professional terminal aesthetic that will really stand out for a cloud computing engineer role! Just replace the placeholder content with your actual details and assets.
