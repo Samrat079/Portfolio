@@ -6,6 +6,342 @@
     <title>Samrat Dutta Protfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* 1. Global Styles - Tokyo Night Theme */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* 2. Tokyo Night Color Palette */
+            --bg-primary: #1a1b26;
+            --bg-secondary: #24283b;
+            --text-primary: #c0caf5;
+            --text-secondary: #9aa5ce;
+            --accent-blue: #7aa2f7;
+            --accent-purple: #bb9af7;
+            --accent-cyan: #7dcfff;
+            --accent-green: #9ece6a;
+            --accent-orange: #ff9e64;
+            --accent-red: #f7768e;
+            --border-color: #414868;
+        }
+
+        body {
+            font-family: 'JetBrains Mono', 'Consolas', 'Monaco', 'Courier New', 'monospace';
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* 3. Terminal Window Container */
+        .terminal-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: var(--bg-secondary);
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        /* 4. Terminal Header (Window Controls) */
+        .terminal-header {
+            background-color: var(--bg-primary);
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .window-controls {
+            display: flex;
+            gap: 8px;
+        }
+
+        .control {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .control.close { background-color: var(--accent-red); }
+        .control.minimize { background-color: var(--accent-orange); }
+        .control.maximize { background-color: var(--accent-green); }
+
+        .terminal-title {
+            margin-left: 20px;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        /* 5. Terminal Content Area */
+        .terminal-content {
+            padding: 30px;
+            min-height: 100vh;
+        }
+
+        /* 6. Section Styling */
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section-header {
+            color: var(--accent-cyan);
+            font-size: 18px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .section-header::before {
+            content: "$ ";
+            color: var(--accent-green);
+        }
+
+        /* 7. Who Am I Section */
+        .ascii-name {
+            color: var(--accent-purple);
+            font-size: clamp(6px, 1.5vw, 18px);
+            line-height: 1;
+            margin-bottom: 30px;
+            white-space: pre;
+            text-align: left;
+        }
+
+        .intro-text {
+            color: var(--text-primary);
+            font-size: 16px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .intro-text .highlight {
+            color: var(--accent-blue);
+            font-weight: bold;
+        }
+
+        /* 8. Arsenal Section */
+        .arsenal-container {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .arsenal-item {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            padding: 20px;
+            background-color: var(--bg-primary);
+            border-radius: 6px;
+            border-left: 3px solid var(--accent-blue);
+            transition: transform 0.3s ease;
+        }
+
+        .arsenal-item:hover {
+            transform: translateX(5px);
+        }
+
+        .arsenal-logo {
+            white-space: pre;
+            font-size: clamp(4px, 1.5vw, 8px);
+            line-height: 1;
+            color: var(--accent-orange);
+            margin: 8px;
+            padding: 12px;
+            display: block;
+        }
+
+        .arsenal-info {
+            flex: 1;
+        }
+
+        .arsenal-name {
+            color: var(--accent-cyan);
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .arsenal-description {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        /* 9. Projects Section */
+        .projects-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .project-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+            padding: 25px;
+            background-color: var(--bg-primary);
+            border-radius: 6px;
+            border-left: 3px solid var(--accent-purple);
+            transition: transform 0.3s ease;
+        }
+
+        .project-item:hover {
+            transform: translateX(5px);
+        }
+
+        .project-image {
+            flex-shrink: 0;
+            width: 150px;
+            height: 100px;
+            background-color: var(--border-color);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 12px;
+        }
+
+        .project-info {
+            flex: 1;
+        }
+
+        .project-title {
+            color: var(--accent-green);
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .project-tech {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tech-tag {
+            background-color: var(--bg-secondary);
+            color: var(--accent-blue);
+            padding: 4px 8px;
+            border-radius: 3px;
+            font-size: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        /* 10. Contact Section */
+        .contact-container {
+            font-family: monospace;
+	    background-color: var(--bg-primary);
+            padding: 30px;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-primary);
+            text-decoration: none;
+            padding: 10px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+            background-color: var(--bg-secondary);
+            border-color: var(--accent-cyan);
+            color: var(--accent-cyan);
+        }
+
+        .contact-link i {
+            font-size: 18px;
+        }
+
+        /* 11. Responsive Design */
+        @media (max-width: 768px) {
+            .terminal-container {
+                margin: 10px;
+            }
+
+            .terminal-content {
+                padding: 20px;
+            }
+
+            .arsenal-item,
+            .project-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .arsenal-logo {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+
+            .project-image {
+                width: 100%;
+                margin: 0 auto;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+        }
+
+        /* 12. Terminal Cursor Animation */
+        .cursor::after {
+            content: "█";
+            animation: blink 1s infinite;
+            color: var(--accent-green);
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        /* 13. Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-primary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-blue);
+        }
+    </style>
 </head>
 <body>
     <div class="terminal-container">
@@ -63,10 +399,8 @@
                         <div class="arsenal-info">
                             <div class="arsenal-name">Nginx</div>
                             <div class="arsenal-description">
-				    <p>
                             Nginx is one of my best tool to for all my hosting needs, it allows me to host websites, web apps, configure
 			    reverse proxies, certify ssl and load balance between my servers. 
-				    </p>
 			    </div>
                         </div>
                     </div>
@@ -84,18 +418,15 @@
                         <div class="arsenal-info">
                             <div class="arsenal-name">Docker</div>
                             <div class="arsenal-description">
-				    <p>
                             Docker is the quintessential containerization software, docker allows me to build safe and secure containers
 			    for any task i want. With the use of the official nginx docker image setting up servers is a brease. With docker
 			    compose i am able to automate the process of building and tearing down containers without any intervention
-			    allowing for highly highly secured and encripted environment.
-				    </p>
-				    <p>
+			    allowing for highly highly secured and encripted environment. 
+
 			    Rest assured docker allows me to ship my environment alongside my project compleatly negating the problem of
 			    <span class="highlight">"It works on my system"</span> and if dispite of all out defences our environment 
 			    does gets compromised we
 			    can just through the container and build a new one with no data loss.
-				    </p>
 			    </div>
                         </div>
                     </div>
@@ -113,39 +444,13 @@
                         <div class="arsenal-info">
                             <div class="arsenal-name">Linux</div>
                             <div class="arsenal-description">
-				    <p>
                             Linux is the center of all of these, the freedom that linux allows me to build servers, containers, websites
 			    and web apps is matchaed by none other. I am aware with all distros Debian, Red Hat and Arch. With the use of
 			    linux i am able develop and shit my projects all while maintaining a safe and encripted environment.
-				    </p>
 			    </div>
                         </div>
                     </div>
 
-                    <div class="arsenal-item">
-                        <div class="arsenal-logo">
- ██████╗ ██╗████████╗██╗  ██╗██╗   ██╗██████╗ 
-██╔════╝ ██║╚══██╔══╝██║  ██║██║   ██║██╔══██╗
-██║  ███╗██║   ██║   ███████║██║   ██║██████╔╝
-██║   ██║██║   ██║   ██╔══██║██║   ██║██╔══██╗
-╚██████╔╝██║   ██║   ██║  ██║╚██████╔╝██████╔╝
- ╚═════╝ ╚═╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚═════╝ 	
-			</div>
-                        <div class="arsenal-info">
-                            <div class="arsenal-name">Git</div>
-                            <div class="arsenal-description">
-				    <p>Git is the safe room for my development journey, git allows me to build repos and save my progress into
-			    it ensuring i can restore into it as something breaks. With the use of github i am able to give a graphical
-			    interface to my safe room.</p> 
-
-			    <p>Alongside all this i am able to automate a lot of things with github actiona, I am able to automate the rolling out
-			    of updates for my apps, I can configure notification from my server about any errors or any malicious actions, I
-			    collab with other developers to contribute towards projects.</p>
-
-			    <p>Altogather development without git is a tedious sequesce of searching, loading hard drivers and unending meeeting
-			    discussing conflicting code ultimatly hindering production.</p>
-                        </div>
-                    </div>
                     <!-- 22. Add more arsenal items here by copying the structure above -->
                 </div>
             </section>
@@ -161,14 +466,12 @@
                             <i class="fas fa-cloud fa-3x"></i>
                         </div>
                         <div class="project-info">
-                            <div class="project-title">Bashmark</div>
+                            <div class="project-title">Multi-Cloud Infrastructure Automation</div>
                             <div class="project-description">
-                            Bashmark is a command line utility for system benchmarking, Benchmark allows the user to perform matrix multiplication on the cpu and gpu from within the command line. Bashmark is written in c++ and uses opencl for its GPU benchmarking resulting in accurate and high intensity performance testing. Bashmark is compatable to run on linux and macOS systems. It is also self hosted by me for install on homebrew.
-			    
-                        <a href="https://github.com/Samrat079/Bashmark.git" class="project-visit">
-                            <span>Visit</span>
-                        </a>
-			    </div>
+                                Designed and implemented a complete CI/CD pipeline using Terraform and Jenkins for 
+                                deploying applications across AWS, Azure, and GCP. Features auto-scaling, 
+                                monitoring, and disaster recovery capabilities.
+                            </div>
                             <div class="project-tech">
                                 <span class="tech-tag">Terraform</span>
                                 <span class="tech-tag">Jenkins</span>
@@ -185,15 +488,11 @@
                             <i class="fas fa-cogs fa-3x"></i>
                         </div>
                         <div class="project-info">
-                            <div class="project-title">Fractal Benchmark</div>
+                            <div class="project-title">Kubernetes Microservices Platform</div>
                             <div class="project-description">
                                 Built a production-ready Kubernetes platform for microservices deployment with 
                                 Istio service mesh, monitoring stack (Prometheus, Grafana), and automated scaling 
                                 based on custom metrics.
-
-                        	<a href="https://github.com/Samrat079/Fractal_Benchmark.git" class="project-visit">
-                            	  <span>Visit</span>
-                        	</a>
                             </div>
                             <div class="project-tech">
                                 <span class="tech-tag">Kubernetes</span>
@@ -211,14 +510,11 @@
                             <i class="fas fa-server fa-3x"></i>
                         </div>
                         <div class="project-info">
-                            <div class="project-title">Aerocal</div>
+                            <div class="project-title">Serverless Data Processing Pipeline</div>
                             <div class="project-description">
                                 Created a serverless data processing pipeline using AWS Lambda, SQS, and DynamoDB 
                                 for real-time analytics. Handles 100K+ events per minute with automatic scaling 
                                 and cost optimization.
-                        	<a href="https://github.com/Samrat079/stall_speed_calculator" class="project-visit">
-                            		<span>Visit</span>
-                        	</a>
                             </div>
                             <div class="project-tech">
                                 <span class="tech-tag">AWS Lambda</span>
