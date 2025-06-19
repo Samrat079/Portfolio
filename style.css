@@ -66,7 +66,7 @@
         .terminal-title {
             margin-left: 20px;
             color: var(--text-secondary);
-            font-size: 14px;
+            font-size: clamp(12px, 1.5vw, 14px);
         }
 
         /* 5. Terminal Content Area */
@@ -96,7 +96,7 @@
         /* 7. Who Am I Section */
         .ascii-name {
             color: var(--accent-purple);
-            font-size: clamp(6px, 1.5vw, 18px);
+            font-size: clamp(8px, 1.5vw, 32px);
             line-height: 1;
             margin-bottom: 30px;
             white-space: pre;
@@ -106,9 +106,7 @@
         .intro-text {
             color: var(--text-primary);
             font-size: 16px;
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
+            text-align: left;
         }
 
         .intro-text .highlight {
@@ -218,9 +216,9 @@
 
 	.project-visit {
 	    display: flex;
-            align-items: center;
+	    font-family: monospace;
+	    font-size: 16px;
 	    max-width: 64px;
-	    margin: 12px 0px;
             color: var(--text-primary);
             text-decoration: none;
             padding: 6px 12px;
@@ -240,6 +238,7 @@
             display: flex;
             gap: 10px;
             flex-wrap: wrap;
+	    margin-bottom: 15px;
         }
 
         .tech-tag {
@@ -259,6 +258,14 @@
             border-radius: 6px;
             text-align: center;
         }
+
+	.contact-text {
+	    color: var(--text-primary);
+            font-size: 16px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+   	 }	    
 
         .contact-links {
             display: flex;
@@ -303,7 +310,7 @@
             .arsenal-item,
             .project-item {
                 flex-direction: column;
-                text-align: center;
+                text-align: left;
             }
 
             .arsenal-logo {
