@@ -186,13 +186,14 @@
 
         .project-image {
             flex-shrink: 0;
-            width: 34em;
+            width: 32em;
             background-color: var(--border-color);
             border-radius: 4px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--text-secondary);
+            font-size: 16px;
         }
 
         .project-image img {
