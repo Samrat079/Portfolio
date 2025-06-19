@@ -1,5 +1,4 @@
-    <style>
-        /* 1. Global Styles - Tokyo Night Theme */
+        /* Tokyo Night Theme */
         * {
             margin: 0;
             padding: 0;
@@ -93,7 +92,7 @@
             color: var(--accent-green);
         }
 
-        /* 7. Who Am I Section */
+        /* 7. Who Am I*/
         .ascii-name {
             color: var(--accent-purple);
             font-size: clamp(8px, 1.5vw, 32px);
@@ -114,7 +113,7 @@
             font-weight: bold;
         }
 
-        /* 8. Arsenal Section */
+        /* 8. Arsenal */
         .arsenal-container {
             display: flex;
             flex-direction: column;
@@ -138,6 +137,7 @@
 
         .arsenal-logo {
             white-space: pre;
+            width: 30em;
             font-size: clamp(4px, 1.5vw, 8px);
             line-height: 1;
             color: var(--accent-orange);
@@ -162,7 +162,7 @@
             font-size: 14px;
         }
 
-        /* 9. Projects Section */
+        /* 9. Projects*/
         .projects-container {
             display: flex;
             flex-direction: column;
@@ -186,16 +186,20 @@
 
         .project-image {
             flex-shrink: 0;
-            width: 150px;
-            height: 100px;
+            width: 34em;
             background-color: var(--border-color);
             border-radius: 4px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--text-secondary);
-            font-size: 12px;
         }
+
+        .project-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain; 
+        }        
 
         .project-info {
             flex: 1;
@@ -214,31 +218,31 @@
             margin-bottom: 15px;
         }
 
-	.project-visit {
-	    display: flex;
-	    font-family: monospace;
-	    font-size: 16px;
-	    max-width: 64px;
+	    .project-visit {
+    	    display: flex;
+    	    font-family: monospace;
+    	    font-size: 16px;
+    	    max-width: 64px;
             color: var(--text-primary);
             text-decoration: none;
             padding: 6px 12px;
             border: 1px solid var(--border-color);
             border-radius: 4px;
             transition: all 0.3s ease;
-	}
+	    }
 
-	.project-visit:hover {
-		background-color: var(--bg-secondary);
-		border-color: var(--accent-cyan);
-		color: var(--accent-cyan);
-   	 }
+	    .project-visit:hover {
+	    	background-color: var(--bg-secondary);
+	    	border-color: var(--accent-cyan);
+	    	color: var(--accent-cyan);
+   	    }
 
 
         .project-tech {
             display: flex;
             gap: 10px;
             flex-wrap: wrap;
-	    margin-bottom: 15px;
+	        margin-bottom: 15px;
         }
 
         .tech-tag {
@@ -250,22 +254,22 @@
             border: 1px solid var(--border-color);
         }
 
-        /* 10. Contact Section */
+        /* 10. Contact */
         .contact-container {
             font-family: monospace;
-	    background-color: var(--bg-primary);
+	        background-color: var(--bg-primary);
             padding: 30px;
             border-radius: 6px;
             text-align: center;
         }
 
-	.contact-text {
+	    .contact-text {
 	    color: var(--text-primary);
             font-size: 16px;
             max-width: 800px;
             margin: 0 auto;
             text-align: center;
-   	 }	    
+   	    }	    
 
         .contact-links {
             display: flex;
@@ -297,7 +301,7 @@
             font-size: 18px;
         }
 
-        /* 11. Responsive Design */
+        /* 11. media query*/
         @media (max-width: 768px) {
             .terminal-container {
                 margin: 10px;
@@ -331,7 +335,7 @@
 
         }
 
-        /* 12. Terminal Cursor Animation */
+        /* 12. Cursor */
         .cursor::after {
             content: "█";
             animation: blink 1s infinite;
@@ -343,7 +347,7 @@
             51%, 100% { opacity: 0; }
         }
 
-        /* 13. Scrollbar Styling */
+        /* 13. Scrollbar*/
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -360,4 +364,3 @@
         ::-webkit-scrollbar-thumb:hover {
             background: var(--accent-blue);
         }
-    </style>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samrat Dutta Protfolio</title>
+    <title>Samrat Dutta Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -20,11 +20,11 @@
         </div>
 
         <div class="terminal-content">
-            <!-- 15. Who Am I Section -->
+            <!-- 15. Who Am I -->
             <section class="section" id="who-am-i">
                 <div class="section-header">whoami</div>
                 
-                <!-- 16. ASCII Name Art (Replace with your custom ASCII) -->
+                <!-- 16. ASCII Name Art -->
                 <div class="ascii-name">
 ███████╗ █████╗ ███╗   ███╗██████╗  █████╗ ████████╗
 ██╔════╝██╔══██╗████╗ ████║██╔══██╗██╔══██╗╚══██╔══╝
@@ -137,7 +137,7 @@
 ██║   ██║██║   ██║   ██╔══██║██║   ██║██╔══██╗
 ╚██████╔╝██║   ██║   ██║  ██║╚██████╔╝██████╔╝
  ╚═════╝ ╚═╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚═════╝ 	
-			</div>
+			        </div>
                         <div class="arsenal-info">
                             <div class="arsenal-name">Git</div>
                             <div class="arsenal-description">
@@ -165,13 +165,15 @@
                     <!-- 24. Project Item 1 -->
                     <div class="project-item">
                         <div class="project-image">
-                            <i class="fas fa-cloud fa-3x"></i>
+                            <img src="assets/bashmark_asset.png"></i>
                         </div>
                         <div class="project-info">
                             <div class="project-title">Bashmark</div>
                             <div class="project-description">
-                            Bashmark is a command line utility for system benchmarking, Benchmark allows the user to perform matrix multiplication on the cpu and gpu from within the command line. Bashmark is written in c++ and uses opencl for its GPU benchmarking resulting in accurate and high intensity performance testing. Bashmark is compatable to run on linux and macOS systems. It is also self hosted by me for install on homebrew.
-			    </div>
+                                <p>
+                                    Bashmark is a command line utility for system benchmarking, Benchmark allows the user to perform matrix multiplication on the cpu and gpu from within the command line. Bashmark is written in c++ and uses opencl for its GPU benchmarking resulting in accurate and high intensity performance testing. Bashmark is compatable to run on linux and macOS systems. It is also self hosted by me for install on homebrew.
+                                </p>
+			                </div>
                             <div class="project-tech">
                                 <span class="tech-tag">Terraform</span>
                                 <span class="tech-tag">Jenkins</span>
@@ -189,14 +191,21 @@
                     <!-- 25. Project Item 2 -->
                     <div class="project-item">
                         <div class="project-image">
-                            <i class="fas fa-cogs fa-3x"></i>
+                            <img src="assets/fractal_asset.png"></i>
                         </div>
                         <div class="project-info">
                             <div class="project-title">Fractal Benchmark</div>
                             <div class="project-description">
-                                Built a production-ready Kubernetes platform for microservices deployment with 
-                                Istio service mesh, monitoring stack (Prometheus, Grafana), and automated scaling 
-                                based on custom metrics.
+                                <p>
+                                    Fractal Benchmark is a web based Mandelbulb renderer implementation with ray marching, It used webGL to perform ray marching on a Mandelbulb fractal algorithm.
+                                </p>                               
+                                <p>
+                                    Fractal Benchmark renders a beautiful fractal of the famous mandelbuld which is a 3D implimentation of the mandelbrot set. As it used the client to render its highly graphics intensive render it can be used to perform benchmarking for the system it is ran on. 
+                                </p>
+                                
+                                <p>
+                                    Along side all these I have also implimented a UI to make it more interactive and capable of creating more intresting shapes.
+                                </p>
                             </div>
                             <div class="project-tech">
                                 <span class="tech-tag">Kubernetes</span>
@@ -214,14 +223,14 @@
                     <!-- 26. Project Item 3 -->
                     <div class="project-item">
                         <div class="project-image">
-                            <i class="fas fa-server fa-3x"></i>
+                            <img src="assets/aerocal_asset.png"></i>
                         </div>
                         <div class="project-info">
                             <div class="project-title">Aerocal</div>
                             <div class="project-description">
-                                Created a serverless data processing pipeline using AWS Lambda, SQS, and DynamoDB 
-                                for real-time analytics. Handles 100K+ events per minute with automatic scaling 
-                                and cost optimization.
+                                <p>
+                                    With the noticable lack of easy to use scientific calculators aerocal's stall speed calculator offers a simple and easy way for the stall speed of a aerofoil to be calculated without the need for complicated scientific calculator all within the browser.
+                                </p>
                             </div>
                             <div class="project-tech">
                                 <span class="tech-tag">AWS Lambda</span>
@@ -236,6 +245,33 @@
                         </div>
                     </div>
 
+                    <div class="project-item">
+                        <div class="project-image">
+                            <img src="assets/brew_asset.jpg"></i>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-title">Self Hosted HomeBrew</div>
+                            <div class="project-description">
+                                <p>
+                                    Created and self hosted HomeBrew server also called as a homebrew tap. HomeBrew allows
+                                to install cli applications within containers very similler to flatpaks. Brew install allows control cli application from making or editing file unnecessarily, also ensuring memory leaks are under control.
+                                </p>
+                                <p>
+                                    My brew server allows me to host my own cli application ensuring cross platform support and easy install from my users.
+                                </p>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">AWS Lambda</span>
+                                <span class="tech-tag">SQS</span>
+                                <span class="tech-tag">DynamoDB</span>
+                                <span class="tech-tag">CloudWatch</span>
+                                <span class="tech-tag">Python</span>
+                            </div>
+                        	<a href="https://github.com/Samrat079/homebrew-samrat" class="project-visit">
+                            		<span>Visit</span>
+                        	</a>
+                        </div>
+                    </div>
                     <!-- 27. Add more projects here by copying the structure above -->
                 </div>
             </section>
